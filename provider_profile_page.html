@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Johnson - Interior Designer | AppointlySlot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #f8f9ff;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            opacity: 0.1;
+        }
+
+        .profile-content {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 2rem;
+            align-items: start;
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            position: relative;
+        }
+
+        .online-indicator {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background: #28a745;
+            border-radius: 50%;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .profile-title {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .profile-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        .rating-text {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .location, .availability-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+        }
+
+        .availability-status.available {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .profile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .book-now-btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+        }
+
+        .book-now-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(40, 167, 69, 0.4);
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .contact-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #667eea;
+            background: transparent;
+            color: #667eea;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Tabs */
+        .tabs-container {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs-nav {
+            display: flex;
+            background: #f8f9ff;
+            border-bottom: 1px solid #e0e7ff;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 1.5rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            white-space: nowrap;
+        }
+
+        .tab-button.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: white;
+        }
+
+        .tab-content {
+            padding: 3rem;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .experience-item {
+            background: #f8f9ff;
+            padding: 1.5rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-duration {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .info-card {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 16px;
+            height: fit-content;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .info-value {
+            color: #666;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.2);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-price {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .service-duration {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .book-service-btn {
+            width: 100%;
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .book-service-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Availability Section */
+        .calendar-container {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 2px solid #e0e7ff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: #667eea;
+            color: #667eea;
+        }
+
+        .calendar-month {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+            border: 2px solid transparent;
+        }
+
+        .calendar-day.available {
+            border-color: #e0e7ff;
+        }
+
+        .calendar-day.available:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .calendar-day.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .calendar-day.unavailable {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .time-slot {
+            background: white;
+            border: 2px solid #e0e7ff;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .time-slot:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .time-slot.selected {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .time-slot.booked {
+            background: #f8f9fa;
+            color: #999;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        /* Reviews Section */
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .reviews-summary {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .overall-rating {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .rating-breakdown {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .rating-bar {
+            width: 150px;
+            height: 8px;
+            background: #e0e7ff;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .rating-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .review-card {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .review-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .review-text {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #f8f9ff;
+            padding: 2rem;
+            border-radius: 16px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid #e0e7ff;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e7ff;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .profile-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .profile-meta {
+                justify-content: center;
+            }
+
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs-nav {
+                justify-content: start;
+            }
+
+            .tab-content {
+                padding: 2rem 1rem;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+                gap: 0.5rem;
+            }
+
+            .time-slots {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">AppointlySlot</a>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> 
+                <span>›</span>
+                <a href="index.html">Interior Designers</a>
+                <span>›</span>
+                <span>Sarah Johnson</span>
+            </div>
+            <div class="nav-actions">
+                <a href="index.html#popularcategories" class="btn-secondary">Back to Search</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Profile Header -->
+        <div class="profile-header fade-in">
+            <div class="profile-content">
+                <div class="profile-avatar">
+                    SJ
+                    <div class="online-indicator" title="Online Now">●</div>
+                </div>
+                
+                <div class="profile-info">
+                    <h1>Sarah Johnson</h1>
+                    <div class="profile-title">Interior Designer & Space Consultant</div>
+                    <div class="profile-meta">
+                        <div class="rating">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <div class="rating-text">4.9 (127 reviews)</div>
+                        </div>
+                        <div class="location">
+                            <span>📍</span>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                        <div class="availability-status available">
+                            <span>🟢</span>
+                            <span>Available Today</span>
+                        </div>
+                    </div>
+                    <p style="color: #666; font-size: 1.1rem;">
+                        Award-winning interior designer with 8+ years of experience creating stunning residential and commercial spaces. Specializing in modern minimalist and contemporary designs.
+                    </p>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="book-now-btn pulse">Book Appointment</button>
+                    <div class="contact-actions">
+                        <button class="contact-btn" title="Call">📞</button>
+                        <button class="contact-btn" title="Message">💬</button>
+                        <button class="contact-btn" title="Video Call">📹</button>
+                        <button class="contact-btn" title="Share">📤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Container -->
+        <div class="tabs-container fade-in">
+            <div class="tabs-nav">
+                <button class="tab-button active" data-tab="about">About</button>
+                <button class="tab-button" data-tab="services">Services Offered</button>
+                <button class="tab-button" data-tab="availability">Availability</button>
+                <button class="tab-button" data-tab="reviews">Reviews (127)</button>
+                <button class="tab-button" data-tab="contact">Contact</button>
+            </div>
+
+            <!-- About Tab -->
+            <div class="tab-content active" id="about">
+                <div class="about-grid">
+                    <div>
+                        <h3 style="margin-bottom: 1.5rem; font-size: 1.5rem; color: #1a1a1a;">About Sarah</h3>
+                        <div class="bio">
+                            Sarah is a passionate interior designer with over 8 years of experience transforming spaces into beautiful, functional environments. She holds a Master's degree in Interior Design from NIFT Mumbai and has worked with over 200 satisfied clients across residential and commercial projects.
+                        </div>
+                        <div class="bio">
+                            Her design philosophy centers on creating spaces that reflect the client's personality while maintaining functionality and aesthetic appeal. Sarah specializes in modern minimalist designs, sustainable interior solutions, and space optimization for small apartments.
+                        </div>
+
+                        <h4 style="margin: 2rem 0 1rem; font-size: 1.3rem; color: #1a1a1a;">Professional Experience</h4>
+                        <div class="experience-item">
+                            <div class="experience-title">Senior Interior Designer</div>
+                            <div class="experience-company">Design Studio Mumbai</div>
+                            <div class="experience-duration">2020 - Present</div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-title">Interior Design Consultant</div>
+                            <div class="experience-company">Freelance</div>
+                            <div class="experience-duration">2018 - 2020</div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-title">Junior Interior Designer</div>
+                            <div class="experience-company">Creative Spaces Pvt Ltd</div>
+                            <div class="experience-duration">2016 - 2018</div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h4 style="margin-bottom: 1.5rem; font-size: 1.3rem; color: #1a1a1a;">Quick Info</h4>
+                        <div class="info-item">
+                            <div class="info-icon">🎓</div>
+                            <div>
+                                <div class="info-label">Education</div>
+                                <div class="info-value">Master's in Interior Design, NIFT Mumbai</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">💼</div>
+                            <div>
+                                <div class="info-label">Experience</div>
+                                <div class="info-value">8+ Years</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🏆</div>
+                            <div>
+                                <div class="info-label">Projects Completed</div>
+                                <div class="info-value">200+</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">🗣️</div>
+                            <div>
+                                <div class="info-label">Languages</div>
+                                <div class="info-value">English, Hindi, Marathi</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <div>
+                                <div class="info-label">Response Time</div>
+                                <div class="info-value">Within 2 hours</div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">✅</div>
+                            <div>
+                                <div class="info-label">Verified</div>
+                                <div class="info-value">Background checked</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Tab -->
+            <div class="tab-content" id="services">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; color: #1a1a1a;">Services Offered</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Interior Design Consultation</div>
+                                <div class="service-duration">⏰ 1 hour session</div>
+                            </div>
+                            <div class="service-price">₹2,500</div>
+                        </div>
+                        <div class="service-description">
+                            Comprehensive consultation to understand your space requirements, style preferences, and budget. Includes initial design concepts and recommendations.
+                        </div>
+                        <ul class="service-features">
+                            <li>Space analysis and measurements</li>
+                            <li>Style and color consultation</li>
+                            <li>Budget planning and timeline</li>
+                            <li>Initial design concepts</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Complete Room Design</div>
+                                <div class="service-duration">⏰ 2-3 hour session</div>
+                            </div>
+                            <div class="service-price">₹8,500</div>
+                        </div>
+                        <div class="service-description">
+                            Complete design solution for one room including 3D visualization, furniture layout, color schemes, and detailed shopping list.
+                        </div>
+                        <ul class="service-features">
+                            <li>3D room visualization</li>
+                            <li>Furniture and decor selection</li>
+                            <li>Color and material palette</li>
+                            <li>Detailed shopping list with links</li>
+                            <li>Installation guidance</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Home Staging Consultation</div>
+                                <div class="service-duration">⏰ 1.5 hour session</div>
+                            </div>
+                            <div class="service-price">₹4,000</div>
+                        </div>
+                        <div class="service-description">
+                            Professional home staging advice to make your property more appealing to potential buyers or renters.
+                        </div>
+                        <ul class="service-features">
+                            <li>Property assessment</li>
+                            <li>Staging recommendations</li>
+                            <li>Furniture arrangement tips</li>
+                            <li>Quick fix suggestions</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Virtual Design Session</div>
+                                <div class="service-duration">⏰ 45 minutes online</div>
+                            </div>
+                            <div class="service-price">₹1,800</div>
+                        </div>
+                        <div class="service-description">
+                            Online consultation via video call for quick design advice, color suggestions, and space planning solutions.
+                        </div>
+                        <ul class="service-features">
+                            <li>Video consultation</li>
+                            <li>Screen sharing for layouts</li>
+                            <li>Digital mood board</li>
+                            <li>Follow-up recommendations</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Full Home Design Package</div>
+                                <div class="service-duration">⏰ 4-6 hour consultation</div>
+                            </div>
+                            <div class="service-price">₹25,000</div>
+                        </div>
+                        <div class="service-description">
+                            Comprehensive design package covering entire home with detailed floor plans, 3D renders, and complete execution support.
+                        </div>
+                        <ul class="service-features">
+                            <li>Complete home assessment</li>
+                            <li>Detailed floor plans</li>
+                            <li>3D visualization for all rooms</li>
+                            <li>Material and color selection</li>
+                            <li>Project management support</li>
+                            <li>Vendor coordination</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div>
+                                <div class="service-title">Commercial Space Design</div>
+                                <div class="service-duration">⏰ 3-4 hour consultation</div>
+                            </div>
+                            <div class="service-price">₹15,000</div>
+                        </div>
+                        <div class="service-description">
+                            Professional design solutions for offices, retail spaces, restaurants, and other commercial establishments.
+                        </div>
+                        <ul class="service-features">
+                            <li>Space optimization</li>
+                            <li>Brand-aligned design</li>
+                            <li>Functional layout planning</li>
+                            <li>Lighting and acoustics</li>
+                            <li>Compliance guidance</li>
+                        </ul>
+                        <button class="book-service-btn">Book This Service</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Availability Tab -->
+            <div class="tab-content" id="availability">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; color: #1a1a1a;">Available Time Slots</h3>
+                
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <div class="calendar-nav">
+                            <button class="nav-btn">‹</button>
+                            <div class="calendar-month">January 2025</div>
+                            <button class="nav-btn">›</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Sun</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Mon</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Tue</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Wed</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Thu</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Fri</div>
+                        <div style="text-align: center; font-weight: 600; color: #666; padding: 0.5rem;">Sat</div>
+                        
+                        <div class="calendar-day unavailable">29</div>
+                        <div class="calendar-day unavailable">30</div>
+                        <div class="calendar-day unavailable">31</div>
+                        <div class="calendar-day available">1</div>
+                        <div class="calendar-day available">2</div>
+                        <div class="calendar-day available">3</div>
+                        <div class="calendar-day available">4</div>
+                        
+                        <div class="calendar-day available">5</div>
+                        <div class="calendar-day available">6</div>
+                        <div class="calendar-day available">7</div>
+                        <div class="calendar-day available">8</div>
+                        <div class="calendar-day available">9</div>
+                        <div class="calendar-day available">10</div>
+                        <div class="calendar-day available">11</div>
+                        
+                        <div class="calendar-day available">12</div>
+                        <div class="calendar-day available">13</div>
+                        <div class="calendar-day available">14</div>
+                        <div class="calendar-day selected">15</div>
+                        <div class="calendar-day available">16</div>
+                        <div class="calendar-day available">17</div>
+                        <div class="calendar-day available">18</div>
+                        
+                        <div class="calendar-day available">19</div>
+                        <div class="calendar-day available">20</div>
+                        <div class="calendar-day available">21</div>
+                        <div class="calendar-day available">22</div>
+                        <div class="calendar-day available">23</div>
+                        <div class="calendar-day available">24</div>
+                        <div class="calendar-day available">25</div>
+                        
+                        <div class="calendar-day available">26</div>
+                        <div class="calendar-day available">27</div>
+                        <div class="calendar-day available">28</div>
+                        <div class="calendar-day available">29</div>
+                        <div class="calendar-day available">30</div>
+                        <div class="calendar-day available">31</div>
+                        <div class="calendar-day unavailable">1</div>
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #e0e7ff;">
+                    <h4 style="margin-bottom: 1.5rem; color: #1a1a1a;">Available Times for January 15, 2025</h4>
+                    <div class="time-slots">
+                        <div class="time-slot">9:00 AM</div>
+                        <div class="time-slot">10:00 AM</div>
+                        <div class="time-slot booked">11:00 AM</div>
+                        <div class="time-slot">12:00 PM</div>
+                        <div class="time-slot selected">1:00 PM</div>
+                        <div class="time-slot">2:00 PM</div>
+                        <div class="time-slot">3:00 PM</div>
+                        <div class="time-slot booked">4:00 PM</div>
+                        <div class="time-slot">5:00 PM</div>
+                        <div class="time-slot">6:00 PM</div>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: #f0f4ff; border-radius: 12px; border-left: 4px solid #667eea;">
+                        <p style="margin-bottom: 1rem; font-weight: 600;">Selected: January 15, 2025 at 1:00 PM</p>
+                        <p style="color: #666; margin-bottom: 1.5rem;">Choose your preferred service and confirm your booking.</p>
+                        <button class="btn-primary" style="width: 100%;">Proceed to Booking</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div class="tab-content" id="reviews">
+                <div class="reviews-header">
+                    <h3 style="font-size: 1.5rem; color: #1a1a1a;">Client Reviews</h3>
+                    <button class="btn-secondary">Write a Review</button>
+                </div>
+
+                <div class="reviews-summary">
+                    <div class="overall-rating">
+                        <div class="rating-number">4.9</div>
+                        <div class="stars" style="font-size: 1.5rem;">⭐⭐⭐⭐⭐</div>
+                        <div style="color: #666;">Based on 127 reviews</div>
+                    </div>
+                    
+                    <div class="rating-breakdown">
+                        <div class="rating-row">
+                            <span>5 ⭐</span>
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 85%"></div>
+                            </div>
+                            <span style="color: #666;">108</span>
+                        </div>
+                        <div class="rating-row">
+                            <span>4 ⭐</span>
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 12%"></div>
+                            </div>
+                            <span style="color: #666;">15</span>
+                        </div>
+                        <div class="rating-row">
+                            <span>3 ⭐</span>
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 2%"></div>
+                            </div>
+                            <span style="color: #666;">3</span>
+                        </div>
+                        <div class="rating-row">
+                            <span>2 ⭐</span>
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 1%"></div>
+                            </div>
+                            <span style="color: #666;">1</span>
+                        </div>
+                        <div class="rating-row">
+                            <span>1 ⭐</span>
+                            <div class="rating-bar">
+                                <div class="rating-fill" style="width: 0%"></div>
+                            </div>
+                            <span style="color: #666;">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">RP</div>
+                                <div>
+                                    <div class="reviewer-name">Rajesh Patel</div>
+                                    <div class="review-date">January 10, 2025</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-text">
+                            Sarah transformed our living room completely! Her attention to detail and understanding of our lifestyle needs was exceptional. The 3D visualization helped us see the final result before implementation. Highly recommend for anyone looking for professional interior design services.
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">AM</div>
+                                <div>
+                                    <div class="reviewer-name">Anita Mehta</div>
+                                    <div class="review-date">January 8, 2025</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-text">
+                            Working with Sarah was an absolute pleasure. She redesigned our entire home within budget and timeline. Her modern minimalist approach perfectly matched our vision. The virtual consultation was very convenient and professional.
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">VK</div>
+                                <div>
+                                    <div class="reviewer-name">Vikram Kumar</div>
+                                    <div class="review-date">January 5, 2025</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-text">
+                            Sarah helped us stage our apartment for sale. Her recommendations were spot-on and we received multiple offers within a week! Professional, punctual, and very knowledgeable about current design trends.
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">PS</div>
+                                <div>
+                                    <div class="reviewer-name">Priya Sharma</div>
+                                    <div class="review-date">January 2, 2025</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <div class="stars">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <div class="review-text">
+                            Excellent service! Sarah's commercial space design for our office was outstanding. She optimized the space beautifully while keeping it functional for our team. Great communication throughout the project.
+                        </div>
+                    </div>
+
+                    <button class="btn-secondary" style="width: 100%; margin-top: 2rem;">Load More Reviews</button>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div class="tab-content" id="contact">
+                <h3 style="margin-bottom: 2rem; font-size: 1.5rem; color: #1a1a1a;">Get in Touch</h3>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h4 style="margin-bottom: 1.5rem; color: #1a1a1a;">Contact Information</h4>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📞</div>
+                            <div>
+                                <div class="info-label">Phone</div>
+                                <div class="info-value">Available after booking</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📧</div>
+                            <div>
+                                <div class="info-label">Email</div>
+                                <div class="info-value">Available after booking</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">📍</div>
+                            <div>
+                                <div class="info-label">Service Areas</div>
+                                <div class="info-value">Mumbai, Navi Mumbai, Thane</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">⏰</div>
+                            <div>
+                                <div class="info-label">Working Hours</div>
+                                <div class="info-value">Mon-Sat: 9 AM - 7 PM</div>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">💬</div>
+                            <div>
+                                <div class="info-label">Response Time</div>
+                                <div class="info-value">Usually within 2 hours</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 12px; border: 2px solid #e0e7ff;">
+                            <h5 style="margin-bottom: 1rem; color: #1a1a1a;">Quick Actions</h5>
+                            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                                <button class="btn-primary">Schedule Video Call</button>
+                                <button class="btn-secondary">Request Quote</button>
+                                <button class="btn-secondary">Save to Favorites</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h4 style="margin-bottom: 1.5rem; color: #1a1a1a;">Send a Message</h4>
+                        <form>
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-input" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-input" placeholder="Enter your email">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Service Interest</label>
+                                <select class="form-input">
+                                    <option>Select a service</option>
+                                    <option>Interior Design Consultation</option>
+                                    <option>Complete Room Design</option>
+                                    <option>Home Staging Consultation</option>
+                                    <option>Virtual Design Session</option>
+                                    <option>Full Home Design Package</option>
+                                    <option>Commercial Space Design</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-textarea" placeholder="Tell us about your project requirements, timeline, and budget..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Calendar functionality
+            const calendarDays = document.querySelectorAll('.calendar-day.available');
+            calendarDays.forEach(day => {
+                day.addEventListener('click', () => {
+                    // Remove selected class from all days
+                    calendarDays.forEach(d => d.classList.remove('selected'));
+                    // Add selected class to clicked day
+                    day.classList.add('selected');
+                });
+            });
+
+            // Time slot functionality
+            const timeSlots = document.querySelectorAll('.time-slot:not(.booked)');
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    // Remove selected class from all slots
+                    timeSlots.forEach(s => s.classList.remove('selected'));
+                    // Add selected class to clicked slot
+                    slot.classList.add('selected');
+                });
+            });
+
+            // Book service buttons
+            const bookServiceBtns = document.querySelectorAll('.book-service-btn');
+            bookServiceBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const originalText = this.textContent;
+                    this.textContent = 'Redirecting to booking...';
+                    this.style.background = '#28a745';
+                    this.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.background = '';
+                        this.style.color = '';
+                    }, 2000);
+                });
+            });
+
+            // Book appointment button
+            const bookNowBtn = document.querySelector('.book-now-btn');
+            bookNowBtn.addEventListener('click', function() {
+                // Switch to availability tab
+                document.querySelector('[data-tab="availability"]').click();
+                
+                // Scroll to tabs
+                document.querySelector('.tabs-container').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+            // Contact form submission
+            const contactForm = document.querySelector('.contact-form form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const submitBtn = this.querySelector('.btn-primary');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    submitBtn.textContent = '✓ Message Sent!';
+                    submitBtn.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                        this.reset();
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Contact action buttons
+            const contactBtns = document.querySelectorAll('.contact-btn');
+            contactBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const title = this.getAttribute('title');
+                    alert(`${title} functionality would be implemented here!`);
+                });
+            });
+
+            // Fade in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
