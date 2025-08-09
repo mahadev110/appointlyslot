@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BookEase - Professional Appointment Scheduling</title>
+    <title>About Us - BookEase</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -65,27 +65,22 @@
             color: var(--primary-color) !important;
         }
 
-        .hero-section {
-            /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+        .hero-about {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 100px 0;
+            padding: 120px 0 80px;
             position: relative;
             overflow: hidden;
-
-                background-image: url('images/bookease-bg.png'); /* Replace with your actual image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
         }
 
-        .hero-section::before {
+        .hero-about::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="80" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:rgba(255,255,255,0.1)"/><stop offset="100%" style="stop-color:rgba(255,255,255,0)"/></radialGradient></defs><circle cx="100" cy="100" r="80" fill="url(%23a)"/><circle cx="900" cy="200" r="60" fill="url(%23a)"/><circle cx="300" cy="800" r="100" fill="url(%23a)"/></svg>');
             opacity: 0.3;
         }
 
@@ -94,22 +89,20 @@
             z-index: 1;
         }
 
-        .btn-primary {
-            background: var(--accent-color);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 600;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
         }
 
-        .btn-primary:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
         }
 
-        .feature-card {
+        .mission-card {
             background: white;
             border-radius: 12px;
             padding: 30px;
@@ -119,17 +112,17 @@
             height: 100%;
         }
 
-        [data-theme="dark"] .feature-card {
+        [data-theme="dark"] .mission-card {
             background: #374151;
             border-color: #4b5563;
         }
 
-        .feature-card:hover {
+        .mission-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-icon {
+        .mission-icon {
             width: 60px;
             height: 60px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
@@ -142,31 +135,48 @@
             font-size: 1.5rem;
         }
 
-        .profession-card {
+        .value-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid var(--primary-color);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        [data-theme="dark"] .value-card {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .value-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member {
             background: white;
             border-radius: 12px;
             padding: 25px;
             text-align: center;
             border: 1px solid var(--border-color);
             transition: all 0.3s ease;
-            cursor: pointer;
-            height: 100%;
         }
 
-        [data-theme="dark"] .profession-card {
+        [data-theme="dark"] .team-member {
             background: #374151;
             border-color: #4b5563;
         }
 
-        .profession-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            border-color: var(--primary-color);
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .profession-icon {
-            width: 80px;
-            height: 80px;
+        .team-avatar {
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             border-radius: 50%;
             display: flex;
@@ -177,29 +187,25 @@
             font-size: 2rem;
         }
 
-        .testimonial-card {
+        .stats-card {
             background: white;
             border-radius: 12px;
             padding: 30px;
+            text-align: center;
             border: 1px solid var(--border-color);
-            margin: 15px;
-            position: relative;
-            height: calc(100% - 30px);
+            transition: all 0.3s ease;
         }
 
-        [data-theme="dark"] .testimonial-card {
+        [data-theme="dark"] .stats-card {
             background: #374151;
             border-color: #4b5563;
         }
 
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--primary-color);
-            font-family: serif;
+            margin-bottom: 10px;
         }
 
         .theme-toggle {
@@ -246,21 +252,70 @@
             color: var(--primary-color);
         }
 
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
+        .story-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
         }
 
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            margin-bottom: 3rem;
+        [data-theme="dark"] .story-section {
+            background: #374151;
+            border-color: #4b5563;
         }
 
-        .rating {
-            color: var(--secondary-color);
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        [data-theme="dark"] .timeline-content {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        [data-theme="dark"] .timeline-marker {
+            border-color: #1f2937;
         }
 
         .fade-in {
@@ -270,6 +325,26 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-left: 50px;
+            }
+            
+            .timeline-content {
+                width: 100%;
+            }
+            
+            .timeline-marker {
+                left: 20px;
+            }
         }
     </style>
 </head>
@@ -291,10 +366,10 @@
                         <a class="nav-link" href="index.html" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about_us.html" id="nav-about">About</a>
+                        <a class="nav-link active" href="#" id="nav-about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services_page.html" id="nav-services">Services</a>
+                        <a class="nav-link" href="#" id="nav-services">Services</a>
                     </li>
                 </ul>
                 
@@ -319,192 +394,274 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-about">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-4 fade-in" id="hero-title">
-                            Professional Appointment Scheduling Made Simple
-                        </h1>
-                        <p class="lead mb-4 fade-in" id="hero-subtitle">
-                            Connect with healthcare providers, beauty professionals, and consultants. Book appointments seamlessly with our secure platform.
+            <div class="hero-content text-center">
+                <h1 class="display-4 fw-bold mb-4 fade-in" id="hero-title">
+                    About BookEase
+                </h1>
+                <p class="lead mb-4 fade-in" id="hero-subtitle">
+                    Empowering connections between professionals and clients through seamless appointment scheduling
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="story-section">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="section-title" id="story-title">Our Story</h2>
+                        <p class="mb-4" id="story-text">
+                            BookEase was born out of a simple yet powerful idea: to bridge the gap between service providers and clients through technology. Founded in 2023, we recognized the challenges faced by both professionals and customers in managing appointments across various industries.
                         </p>
-                        <button class="btn btn-primary btn-lg fade-in" id="book-btn">
-                            <i class="fas fa-calendar-plus me-2"></i>Book Appointment
-                        </button>
+                        <p class="mb-4" id="story-text2">
+                            From healthcare to beauty services, from consultancy to education, we saw an opportunity to create a unified platform that would serve diverse professional needs while maintaining the highest standards of security and user experience.
+                        </p>
+                        <p id="story-text3">
+                            Today, BookEase proudly serves thousands of professionals and clients, making appointment scheduling effortless and accessible in both English and Tamil languages.
+                        </p>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="text-center fade-in">
-                        <i class="fas fa-calendar-alt" style="font-size: 15rem; opacity: 0.3;"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Features Section -->
-    <section class="py-5" id="features">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" id="features-title">Key Features</h2>
-                <p class="section-subtitle" id="features-subtitle">Everything you need for seamless appointment management</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mouse-pointer"></i>
+                    <div class="col-lg-6 text-center">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 200px; height: 200px;">
+                            <i class="fas fa-handshake text-white" style="font-size: 5rem;"></i>
                         </div>
-                        <h5 class="fw-bold mb-3" id="feature1-title">Easy Booking</h5>
-                        <p class="text-muted" id="feature1-desc">Book appointments in just a few clicks with our intuitive interface</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h5 class="fw-bold mb-3" id="feature2-title">Secure Messaging</h5>
-                        <p class="text-muted" id="feature2-desc">Encrypted communication between clients and service providers</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h5 class="fw-bold mb-3" id="feature3-title">Provider Dashboard</h5>
-                        <p class="text-muted" id="feature3-desc">Comprehensive dashboard for managing schedules and client information</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Profession Categories -->
-    <section class="py-5 bg-light" id="professions" style="background-color: var(--bg-light) !important;">
+    <!-- Mission, Vision, Values -->
+    <section class="py-5 bg-light" style="background-color: var(--bg-light) !important;">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" id="prof-title">Choose Your Service Category</h2>
-                <p class="section-subtitle" id="prof-subtitle">Find the right professional for your needs</p>
+                <h2 class="section-title" id="mvv-title">Mission, Vision & Values</h2>
             </div>
             
             <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="profession-card">
-                        <div class="profession-icon">
-                            <i class="fas fa-user-md"></i>
+                <div class="col-md-4">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
                         </div>
-                        <h6 class="fw-bold mb-2" id="prof1">Healthcare</h6>
-                        <p class="text-muted small" id="prof1-desc">Doctors, Dentists, Specialists</p>
+                        <h5 class="fw-bold mb-3" id="mission-title">Our Mission</h5>
+                        <p class="text-muted" id="mission-text">To simplify professional service booking by creating an intuitive, secure, and accessible platform that connects service providers with clients seamlessly.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="profession-card">
-                        <div class="profession-icon">
-                            <i class="fas fa-cut"></i>
+                <div class="col-md-4">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
                         </div>
-                        <h6 class="fw-bold mb-2" id="prof2">Beauty & Wellness</h6>
-                        <p class="text-muted small" id="prof2-desc">Salons, Spas, Therapists</p>
+                        <h5 class="fw-bold mb-3" id="vision-title">Our Vision</h5>
+                        <p class="text-muted" id="vision-text">To become the leading appointment scheduling platform that empowers professionals worldwide to grow their practice and deliver exceptional service experiences.</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="profession-card">
-                        <div class="profession-icon">
-                            <i class="fas fa-briefcase"></i>
+                <div class="col-md-4">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
-                        <h6 class="fw-bold mb-2" id="prof3">Consultants</h6>
-                        <p class="text-muted small" id="prof3-desc">Legal, Financial, Business</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="profession-card">
-                        <div class="profession-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h6 class="fw-bold mb-2" id="prof4">Education</h6>
-                        <p class="text-muted small" id="prof4-desc">Tutors, Coaches, Trainers</p>
+                        <h5 class="fw-bold mb-3" id="values-title">Our Values</h5>
+                        <p class="text-muted" id="values-text">Innovation, accessibility, security, and user-centricity drive everything we do. We believe in technology that serves humanity.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="py-5" id="testimonials">
+    <!-- Core Values -->
+    <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" id="test-title">What Our Users Say</h2>
-                <p class="section-subtitle" id="test-subtitle">Real feedback from satisfied clients and providers</p>
+                <h2 class="section-title" id="core-values-title">What Drives Us</h2>
+                <p class="section-subtitle" id="core-values-subtitle">The principles that guide our every decision</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="value-card">
+                        <h5 class="fw-bold mb-3" id="value1-title">
+                            <i class="fas fa-users text-primary me-2"></i>User-Centric Design
+                        </h5>
+                        <p id="value1-text">Every feature we build is designed with our users in mind. We prioritize ease of use, accessibility, and meaningful interactions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-card">
+                        <h5 class="fw-bold mb-3" id="value2-title">
+                            <i class="fas fa-shield-alt text-primary me-2"></i>Security First
+                        </h5>
+                        <p id="value2-text">We implement industry-leading security measures to protect user data and ensure confidential communication between all parties.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-card">
+                        <h5 class="fw-bold mb-3" id="value3-title">
+                            <i class="fas fa-globe text-primary me-2"></i>Cultural Inclusivity
+                        </h5>
+                        <p id="value3-text">We celebrate diversity by supporting multiple languages and cultural preferences, making our platform accessible to everyone.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="value-card">
+                        <h5 class="fw-bold mb-3" id="value4-title">
+                            <i class="fas fa-rocket text-primary me-2"></i>Continuous Innovation
+                        </h5>
+                        <p id="value4-text">We constantly evolve our platform with new features and improvements based on user feedback and technological advances.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-5 bg-light" style="background-color: var(--bg-light) !important;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" id="stats-title">BookEase by Numbers</h2>
+                <p class="section-subtitle" id="stats-subtitle">Our impact in the appointment scheduling industry</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">10K+</div>
+                        <h6 class="fw-bold" id="stat1">Active Users</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">2K+</div>
+                        <h6 class="fw-bold" id="stat2">Service Providers</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">50K+</div>
+                        <h6 class="fw-bold" id="stat3">Appointments Booked</h6>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stats-card">
+                        <div class="stats-number">98%</div>
+                        <h6 class="fw-bold" id="stat4">User Satisfaction</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" id="timeline-title">Our Journey</h2>
+                <p class="section-subtitle" id="timeline-subtitle">Key milestones in our growth story</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5 class="fw-bold" id="t1-title">Platform Launch</h5>
+                        <p class="mb-0" id="t1-desc">BookEase officially launched with basic appointment scheduling features for healthcare providers.</p>
+                        <small class="text-muted">January 2023</small>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div style="width: 45%;"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div style="width: 45%;"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h5 class="fw-bold" id="t2-title">Multi-Industry Expansion</h5>
+                        <p class="mb-0" id="t2-desc">Extended support to beauty salons, consultants, and educational services.</p>
+                        <small class="text-muted">June 2023</small>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h5 class="fw-bold" id="t3-title">Tamil Language Support</h5>
+                        <p class="mb-0" id="t3-desc">Introduced comprehensive Tamil language support to serve the local community better.</p>
+                        <small class="text-muted">October 2023</small>
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div style="width: 45%;"></div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div style="width: 45%;"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h5 class="fw-bold" id="t4-title">10K User Milestone</h5>
+                        <p class="mb-0" id="t4-desc">Reached 10,000 active users across various professional categories.</p>
+                        <small class="text-muted">December 2024</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-5 bg-light" style="background-color: var(--bg-light) !important;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title" id="team-title">Meet Our Team</h2>
+                <p class="section-subtitle" id="team-subtitle">The passionate people behind BookEase</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="rating mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
                         </div>
-                        <p class="mb-4" id="test1">"BookEase made scheduling my medical appointments so much easier. The interface is clean and the notifications are very helpful."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                <i class="fas fa-user text-white"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0">Priya Sharma</h6>
-                                <small class="text-muted" id="test1-role">Patient</small>
-                            </div>
-                        </div>
+                        <h5 class="fw-bold mb-2" id="team1-name">Arjun Patel</h5>
+                        <p class="text-primary mb-2" id="team1-role">CEO & Founder</p>
+                        <p class="text-muted small" id="team1-desc">Passionate about connecting people with the services they need through technology.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="rating mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
                         </div>
-                        <p class="mb-4" id="test2">"As a salon owner, this platform has streamlined my booking process completely. My clients love the convenience!"</p>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                <i class="fas fa-user text-white"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0">Rajesh Kumar</h6>
-                                <small class="text-muted" id="test2-role">Salon Owner</small>
-                            </div>
-                        </div>
+                        <h5 class="fw-bold mb-2" id="team2-name">Priya Krishnan</h5>
+                        <p class="text-primary mb-2" id="team2-role">CTO</p>
+                        <p class="text-muted small" id="team2-desc">Leading our technical vision with expertise in scalable web applications and user experience.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <div class="rating mb-3">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <i class="fas fa-user"></i>
                         </div>
-                        <p class="mb-4" id="test3">"The dual language support is fantastic! I can use the app in Tamil, which makes everything so much more comfortable."</p>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                                <i class="fas fa-user text-white"></i>
-                            </div>
-                            <div>
-                                <h6 class="mb-0">Meera Devi</h6>
-                                <small class="text-muted" id="test3-role">Client</small>
-                            </div>
-                        </div>
+                        <h5 class="fw-bold mb-2" id="team3-name">Ravi Sharma</h5>
+                        <p class="text-primary mb-2" id="team3-role">Head of Product</p>
+                        <p class="text-muted small" id="team3-desc">Ensuring every feature we build solves real problems for our users and service providers.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title mb-4" id="cta-title">Ready to Get Started?</h2>
+            <p class="lead mb-4" id="cta-subtitle">Join thousands of professionals who trust BookEase for their appointment scheduling needs</p>
+            <div class="d-flex gap-3 justify-content-center">
+                <button class="btn btn-primary btn-lg" id="cta-provider">
+                    <i class="fas fa-store me-2"></i><span id="cta-provider-text">Join as Provider</span>
+                </button>
+                <button class="btn btn-outline-primary btn-lg" id="cta-client">
+                    <i class="fas fa-calendar-plus me-2"></i><span id="cta-client-text">Book Appointment</span>
+                </button>
             </div>
         </div>
     </section>
@@ -530,17 +687,38 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
+
+
+  <script>
         // Language content
         const content = {
             en: {
-                'brand-text': 'BookEase',
+                           'brand-text': 'BookEase',
                 'nav-home': 'Home',
                 'nav-about': 'About',
                 'nav-services': 'Services',
                 'nav-login': 'Login',
-                'hero-title': 'Professional Appointment Scheduling Made Simple',
-                'hero-subtitle': 'Connect with healthcare providers, beauty professionals, and consultants. Book appointments seamlessly with our secure platform.',
+                'hero-title': 'About BookEase',
+                'hero-subtitle': 'Empowering connections between professionals and clients through seamless appointment scheduling',
+                'story-title': 'Our Story',
+                'story-text': 'BookEase was born out of a simple yet powerful idea: to bridge the gap between service providers and clients through technology. Founded in 2023, we recognized the challenges faced by both professionals and customers in managing appointments across various industries.',
+                'story-text2': 'From healthcare to beauty services, from consultancy to education, we saw an opportunity to create a unified platform that would serve diverse professional needs while maintaining the highest standards of security and user experience.',
+                'story-text3': 'Today, BookEase proudly serves thousands of professionals and clients, making appointment scheduling effortless and accessible in both English and Tamil languages.',
+                'mvv-title': 'Mission, Vision & Values',
+                'mission-title': 'Our Mission',
+                'mission-text': 'To simplify professional service booking by creating an intuitive, secure, and accessible platform that connects service providers with clients seamlessly.',
+                'vision-title': 'Our Vision',
+                'vision-text': 'To become the leading appointment scheduling platform that empowers professionals worldwide to grow their practice and deliver exceptional service experiences.',
+                'values-title': 'Our Values',
+                'values-text': 'Innovation, accessibility, security, and user-centricity drive everything we do. We believe in technology that serves humanity.',
+                'core-values-title': 'What Drives Us',
+                'core-values-subtitle': 'The principles that guide our every decision',
+                'value1-title': 'User-Centric Design',
+                'value1-text': 'Every feature we build is designed with our users in mind. We prioritize ease of use, accessibility, and meaningful interactions.',
+                'value2-title': 'Security First',
+                'value2-text': 'We implement industry-leading security measures to protect user data and ensure confidential communication between.',
+
+              
                 'book-btn': 'Book Appointment',
                 'features-title': 'Key Features',
                 'features-subtitle': 'Everything you need for seamless appointment management',
